@@ -76,7 +76,7 @@ The Transformer architecture is a composition of Transformer layers. Each layer 
 1. **Self-Attention Module**  
    - Inputs: $ H = [h_1, h_2, \dots, h_n] \in \mathbb{R}^{n \times d}$, where $ d $ is the hidden dimension.  
    - Computations:  
-     - $ Q = HW_Q, \; K = HW_K, \; V = HW_V $  
+     - $Q = HW_Q, \; K = HW_K, \; V = HW_V$  
      - $ A = \frac{QK^T}{\sqrt{d_K}} $  
      - $ \text{Attn}(H) = \text{softmax}(A)V $  
    - $ A $: Captures similarity between queries and keys.
