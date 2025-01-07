@@ -34,7 +34,7 @@ h_i^{(l+1)} = \text{Aggregate} \big( \{ f(h_i^{(l)}, h_j^{(l)}, e_{ij}) \, | \, 
 
 Where:
 
-```markdown
+```math
 h_i^{(l)}: \text{Feature of node } i \text{ at layer } l.
 ```
 
@@ -59,8 +59,9 @@ Once a node collects messages, the GNN aggregates them to update the node’s fe
 
 Common aggregation methods include:
 
-Sum/Average/Max: Simple methods to combine neighbor messages.
-Learnable Aggregation (e.g., attention): Use a learnable function (like attention) to weigh the importance of each neighbor before aggregation.
+-->Sum/Average/Max: Simple methods to combine neighbor messages.
+-->Learnable Aggregation (e.g., attention): Use a learnable function (like attention) to weigh the importance of each neighbor before aggregation.
+
 After aggregation, the node's updated feature is passed through a non-linear function (like a neural network) to enhance its representation.
 
 4. Stacking Layers
@@ -69,9 +70,10 @@ By stacking multiple message-passing layers, GNNs enable nodes to gather informa
 5. Challenges of GNNs
 While GNNs have been effective for many graph tasks, they face limitations:
 
-Over-smoothing: As layers increase, node features become indistinguishable.
-Local Focus: GNNs primarily focus on local neighborhoods and struggle to capture global graph properties.
-Computational Bottlenecks: Aggregating messages for large graphs can be resource-intensive.
+-->Over-smoothing: As layers increase, node features become    indistinguishable.
+-->Local Focus: GNNs primarily focus on local neighborhoods and struggle to capture global graph properties.
+-->Computational Bottlenecks: Aggregating messages for large graphs can be resource-intensive.
+
 Why Do We Need Alternatives?
 Although GNNs excel at leveraging local structures in graphs, their design inherently limits their ability to model global relationships efficiently. This gap is where Transformers, and specifically Graphormer, step in. By rethinking how graph structure is encoded, Graphormer provides a new approach to graph representation learning that combines the strengths of both GNNs and Transformers.
 
