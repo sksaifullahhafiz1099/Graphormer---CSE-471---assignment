@@ -73,7 +73,7 @@ Next, we’ll explore how Graphormer achieves this!
 ## Transformer Architecture
 The Transformer architecture is a composition of Transformer layers. Each layer consists of:
 
-![Graphormer](fig4.png)
+![Graphormer](fig4.png) 
 
 1. **Self-Attention Module**  
    - Inputs: $H = [h_1, h_2, \dots, h_n] \in \mathbb{R}^{n \times d}$, where $d$ is the hidden dimension.  
