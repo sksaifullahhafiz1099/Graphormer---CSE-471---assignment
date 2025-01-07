@@ -34,11 +34,25 @@ h_i^{(l+1)} = \text{Aggregate} \big( \{ f(h_i^{(l)}, h_j^{(l)}, e_{ij}) \, | \, 
 
 Where:
 
-- \( h_i^{(l)} \): Feature of node \( i \) at layer \( l \).  
-- \( e_{ij} \): Feature of the edge connecting \( i \) and \( j \).  
-- \( \mathcal{N}(i) \): Set of neighbors of \( i \).  
-- \( f \): Function to compute messages from neighbor nodes.  
-- Aggregate: Combines the messages (e.g., summing, averaging). 
+```markdown
+h_i^{(l)}: \text{Feature of node } i \text{ at layer } l.
+```
+
+```math
+e_{ij}: \text{Feature of the edge connecting } i \text{ and } j.
+```
+
+```math
+\mathcal{N}(i): \text{Set of neighbors of } i.
+```
+
+```math
+f: \text{Function to compute messages from neighbor nodes.}
+```
+
+```math
+\text{Aggregate}: \text{Combines the messages (e.g., summing, averaging).}
+```
 
 3. Aggregation
 Once a node collects messages, the GNN aggregates them to update the node’s feature representation. The goal is to summarize the influence of its neighbors in a way that captures both the local structure and the node's context in the graph.
