@@ -30,7 +30,7 @@ Message passing is the core operation in GNNs. Each node \(i\) gathers informati
 Mathematically:
 ```math
 h_i^{(l+1)} = \text{Aggregate} \big( \{ f(h_i^{(l)}, h_j^{(l)}, e_{ij}) \, | \, j \in \mathcal{N}(i) \} \big)
-
+```
 ### Where:
 - \( h_i^{(l)} \): Feature of node \( i \) at layer \( l \).  
 - \( e_{ij} \): Feature of the edge between \( i \) and \( j \).  
