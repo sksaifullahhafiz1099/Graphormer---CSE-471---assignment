@@ -74,18 +74,18 @@ Next, we’ll explore how Graphormer achieves this!
 The Transformer architecture is a composition of Transformer layers. Each layer consists of:
 
 1. **Self-Attention Module**  
-   - Inputs: $ H = [h_1, h_2, \dots, h_n] \in \mathbb{R}^{n \times d}$, where $ d $ is the hidden dimension.  
+   - Inputs: $H = [h_1, h_2, \dots, h_n] \in \mathbb{R}^{n \times d}$, where $d$ is the hidden dimension.  
    - Computations:  
      - $Q = HW_Q, \; K = HW_K, \; V = HW_V$  
-     - $ A = \frac{QK^T}{\sqrt{d_K}} $  
-     - $ \text{Attn}(H) = \text{softmax}(A)V $  
-   - $ A $: Captures similarity between queries and keys.
+     - $A = \frac{QK^T}{\sqrt{d_K}}$  
+     - $\text{Attn}(H) = \text{softmax}(A)V$  
+   - $A$: Captures similarity between queries and keys.
 
 2. **Feed-Forward Network (FFN)**  
    - Position-wise, applied to each token individually.
 
 ### Multi-Head Attention
-For simplicity, the above description considers single-head attention. In practice, multi-head attention splits \( Q, K, V \) across multiple heads for richer representation learning.
+For simplicity, the above description considers single-head attention. In practice, multi-head attention splits $Q, K, V$ across multiple heads for richer representation learning.
 
 ---
 
@@ -113,10 +113,10 @@ Graphormer is designed for graph tasks, leveraging graph structure within the Tr
 - **Purpose:** Incorporates node importance into attention calculations.  
 - **Method:**  
   - Use degree centrality (indegree and outdegree).  
-  - Add learnable embedding vectors \( z_{deg} \) and \( z_{deg+} \) based on node degree:  
-    \[
-    h_i^{(0)} = x_i + z_{deg}(\text{deg}(v_i)) + z_{deg+}(\text{deg}^+(v_i))
-    \]  
+  - Add learnable embedding vectors $z_{deg}$ and $z_{deg+}$ based on node degree:  
+    
+    $h_i^{(0)} = x_i + z_{deg}(\text{deg}(v_i)) + z_{deg+}(\text{deg}^+(v_i))$
+      
   - Effective for undirected graphs by unifying indegree and outdegree into a single degree value.
 
 ---
@@ -124,11 +124,11 @@ Graphormer is designed for graph tasks, leveraging graph structure within the Tr
 ### Spatial Encoding
 - **Purpose:** Captures positional dependency in graphs.  
 - **Method:**  
-  - Define a spatial relation function \( \phi(v_i, v_j) \), using shortest path distance (SPD).  
-  - Incorporate spatial bias \( b(\phi(v_i, v_j)) \) into attention:  
-    \[
-    A_{ij} = \frac{(h_i W_Q)(h_j W_K)^T}{\sqrt{d}} + b(\phi(v_i, v_j))
-    \]  
+  - Define a spatial relation function $\phi(v_i, v_j)$, using shortest path distance (SPD).  
+  - Incorporate spatial bias $b(\phi(v_i, v_j))$ into attention:  
+    
+    $A_{ij} = \frac{(h_i W_Q)(h_j W_K)^T}{\sqrt{d}} + b(\phi(v_i, v_j))$
+     
 - **Benefits:**  
   - Enables global receptive field in a single Transformer layer.  
   - Adapts attention based on graph structure.
@@ -138,14 +138,14 @@ Graphormer is designed for graph tasks, leveraging graph structure within the Tr
 ### Edge Encoding
 - **Purpose:** Incorporates edge features into attention layers.  
 - **Method:**  
-  - For node pair \( (v_i, v_j) \), compute edge bias \( c_{ij} \) using shortest path \( SP_{ij} \):  
-    \[
-    c_{ij} = \frac{1}{N} \sum_{n=1}^{N} x_{e_n} (w_E^n)^T
-    \]  
+  - For node pair $(v_i, v_j)$, compute edge bias $c_{ij}$ using shortest path $SP_{ij}$:  
+    
+    $c_{ij} = \frac{1}{N} \sum_{n=1}^{N} x_{e_n} (w_E^n)^T$
+     
   - Update attention score:  
-    \[
-    A_{ij} = \frac{(h_i W_Q)(h_j W_K)^T}{\sqrt{d}} + b(\phi(v_i, v_j)) + c_{ij}
-    \]
+    
+    $A_{ij} = \frac{(h_i W_Q)(h_j W_K)^T}{\sqrt{d}} + b(\phi(v_i, v_j)) + c_{ij}$
+    
 
 ---
 
@@ -154,14 +154,13 @@ Graphormer is designed for graph tasks, leveraging graph structure within the Tr
 ### Graphormer Layer
 - Built upon the classic Transformer encoder with modifications:  
   - **Pre-Layer Normalization:** Applied before MHA and FFN.  
-  - **Dimensionality:** Input, output, and inner-layer dimensions are set to \( d \).  
+  - **Dimensionality:** Input, output, and inner-layer dimensions are set to $d$.  
   - Formally defined as:  
-    \[
-    h^{(l)} = \text{MHA}(\text{LN}(h^{(l-1)})) + h^{(l-1)}
-    \]  
-    \[
-    h^{(l)} = \text{FFN}(\text{LN}(h^{(l)})) + h^{(l)}
-    \]
+    
+    $h^{(l)} = \text{MHA}(\text{LN}(h^{(l-1)})) + h^{(l-1)}$
+    
+    $h^{(l)} = \text{FFN}(\text{LN}(h^{(l)})) + h^{(l)}$
+    
 
 ---
 
