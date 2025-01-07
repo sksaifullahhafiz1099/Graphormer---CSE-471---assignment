@@ -32,10 +32,10 @@ Mathematically:
 h_i^{(l+1)} = \text{Aggregate} \big( \{ f(h_i^{(l)}, h_j^{(l)}, e_{ij}) \, | \, j \in \mathcal{N}(i) \} \big)
 ```
 ### Where:
-- \( h_i^{(l)} \): Feature of node \( i \) at layer \( l \).  
-- \( e_{ij} \): Feature of the edge between \( i \) and \( j \).  
-- \( \mathcal{N}(i) \): Set of neighbors of \( i \).  
-- \( f \): Function to compute messages.  
+- `$h_i^{(l)}$`: Feature of node `$i$` at layer `$l$`.  
+- `$e_{ij}$`: Feature of the edge between `$i$` and `$j$`.  
+- `$\mathcal{N}(i)$`: Set of neighbors of `$i$`.  
+- `$f$`: Function to compute messages.  
 - **Aggregate**: Combines messages (e.g., sum, average).  
 
 ---
