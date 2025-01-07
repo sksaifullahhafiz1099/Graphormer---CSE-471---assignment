@@ -28,9 +28,9 @@ Message Aggregation: Node 𝑖 aggregates the received messages into a single re
 For example, if node 𝑖 is connected to nodes 𝑗, 𝑘, and 𝑙, it will combine information from those neighbors during message passing.
 
 Mathematically, this can be expressed as:
-$$
+```math
 h_i^{(l+1)} = \text{Aggregate} \big( \{ f(h_i^{(l)}, h_j^{(l)}, e_{ij}) \, | \, j \in \mathcal{N}(i) \} \big)
-$$
+```
 
 Where:
 
