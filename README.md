@@ -180,6 +180,10 @@ Graphormer is designed for graph tasks, leveraging graph structure within the Tr
 
 ---
 
+## How powerful is Graphormer?
+Graphormer demonstrates enhanced power compared to traditional GNNs by representing the **AGGREGATE** and **COMBINE** steps of popular models like GIN, GCN, and GraphSAGE through its spatial encoding and self-attention mechanisms. Spatial encoding allows the model to distinguish neighbor sets $N(v_i)$ and compute statistics like mean or sum over them, while multiple attention heads and FFNs enable separate and combined processing of node and neighbor representations. Furthermore, Graphormer surpasses the expressiveness of classic message-passing GNNs, which are limited by the 1-Weisfeiler-Lehman (1-WL) test, enabling it to distinguish graphs that 1-WL fails to differentiate.
+
+
 ## Conclusion
 Graphormer bridges the gap between GNNs and Transformers, offering a powerful model for graph tasks by leveraging structural encodings and innovative design choices.
 
