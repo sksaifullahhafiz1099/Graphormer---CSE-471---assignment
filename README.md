@@ -27,7 +27,7 @@ Message passing is the core operation in GNNs. Each node \(i\) gathers informati
 - **Message Generation**: Neighbors send their features to \(i\).  
 - **Message Aggregation**: Node \(i\) combines the received messages.
 
-![Shadowcast](fig1.png)
+![Message passing and aggregation](fig1.png)
 
 Mathematically:
 ```math
@@ -41,8 +41,8 @@ h_i^{(l+1)} = \text{Aggregate} \big( \{ f(h_i^{(l)}, h_j^{(l)}, e_{ij}) \, | \, 
 - **Aggregate**: Combines messages (e.g., sum, average).  
 
 ---
-![Shadowcast](fig2.png)
-![Shadowcast](fig3.png)
+![Message passing and aggregation](fig2.png)
+![Message passing and aggregation](fig3.png)
 
 ### 3. Aggregation
 Nodes aggregate messages to update their features, capturing both local structure and context. Common methods include summing, averaging, or using attention mechanisms.
