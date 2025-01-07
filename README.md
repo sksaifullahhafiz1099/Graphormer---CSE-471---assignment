@@ -1,6 +1,6 @@
 # Graphormer---CSE-471---Assignment
 ## Team Members
-- 1905114 - Md. Shafiul Haque
+- 1905102 - Md. Shafiul Haque
 - 1905114 - Sk. Saifullah Hafiz
 ## Introduction
 Transformers have transformed fields like NLP and computer vision, but they’ve struggled to match Graph Neural Networks (GNNs) on graph representation benchmarks. This raises a key question: Are Transformers unsuitable for graph data, or is there a better way to use them?
