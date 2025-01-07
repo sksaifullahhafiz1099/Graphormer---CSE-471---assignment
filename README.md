@@ -34,38 +34,22 @@ h_i^{(l+1)} = \text{Aggregate} \big( \{ f(h_i^{(l)}, h_j^{(l)}, e_{ij}) \, | \, 
 
 Where:
 
-ℎ
-𝑖
-(
-𝑙
-)
-h 
-i
-(l)
-​
- : Feature of node 
-𝑖
-i at layer 
-𝑙
-l.
-𝑒
-𝑖
-𝑗
-e 
-ij
-​
- : Feature of the edge connecting 
-𝑖
-i and 
-𝑗
-j.
-𝑁
-(
-𝑖
-)
-N(i): Set of neighbors of 
-𝑖
-i.
-𝑓
-f: Function to compute messages from neighbor nodes.
-Aggregate: Combines the messages (e.g., summing, averaging).
+```math
+h_i^{(l)}: \text{Feature of node } i \text{ at layer } l.
+```
+
+```math
+e_{ij}: \text{Feature of the edge connecting } i \text{ and } j.
+```
+
+```math
+\mathcal{N}(i): \text{Set of neighbors of } i.
+```
+
+```math
+f: \text{Function to compute messages from neighbor nodes.}
+```
+
+```math
+\text{Aggregate}: \text{Combines the messages (e.g., summing, averaging).}
+```
