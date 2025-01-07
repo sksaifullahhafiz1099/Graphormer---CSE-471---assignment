@@ -30,3 +30,37 @@ Message passing is the core operation in GNNs. Each node \(i\) gathers informati
 Mathematically:
 ```math
 h_i^{(l+1)} = \text{Aggregate} \big( \{ f(h_i^{(l)}, h_j^{(l)}, e_{ij}) \, | \, j \in \mathcal{N}(i) \} \big)
+
+### Where:
+- \( h_i^{(l)} \): Feature of node \( i \) at layer \( l \).  
+- \( e_{ij} \): Feature of the edge between \( i \) and \( j \).  
+- \( \mathcal{N}(i) \): Set of neighbors of \( i \).  
+- \( f \): Function to compute messages.  
+- **Aggregate**: Combines messages (e.g., sum, average).  
+
+---
+
+### 3. Aggregation
+Nodes aggregate messages to update their features, capturing both local structure and context. Common methods include summing, averaging, or using attention mechanisms.
+
+---
+
+### 4. Stacking Layers
+By stacking multiple layers, GNNs allow nodes to gather information from farther graph regions, enabling multi-hop relationships.
+
+---
+
+### 5. Challenges of GNNs
+Despite their success, GNNs face limitations:
+- **Over-smoothing**: Node features become indistinguishable with deeper layers.  
+- **Local Focus**: Struggle to capture global graph properties.  
+- **Scalability**: Computationally expensive for large graphs.  
+
+---
+
+### Why Graphormer?  
+While GNNs excel at local structure, their global modeling is limited. Graphormer overcomes these challenges by integrating graph structure directly into the Transformer architecture, blending the strengths of both approaches.
+
+Next, we’ll explore how Graphormer achieves this!
+
+
