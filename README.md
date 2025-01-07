@@ -67,7 +67,7 @@ While GNNs excel at local structure, their global modeling is limited. Graphorme
 
 Next, we’ll explore how Graphormer achieves this!
 
-
+---
 # Transformer and Graphormer: A Comprehensive Overview
 
 ## Transformer Architecture
