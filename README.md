@@ -22,10 +22,10 @@ GNNs are powerful tools for learning from graph-structured data. They rely on **
 A graph comprises nodes (entities) and edges (relationships). Nodes and edges may have features that add context, such as user attributes in social networks or bond types in molecules.
 
 ### 2. Message Passing
-Message passing is the core operation in GNNs. Each node \(i\) gathers information from its neighbors:
+Message passing is the core operation in GNNs. Each node $i$ gathers information from its neighbors:
 
-- **Message Generation**: Neighbors send their features to \(i\).  
-- **Message Aggregation**: Node \(i\) combines the received messages.
+- **Message Generation**: Neighbors send their features to $i$.  
+- **Message Aggregation**: Node $i$ combines the received messages.
 
 ![Message passing and aggregation](fig1.png)
 
