@@ -9,7 +9,7 @@ The paper *Graphormer* answers this by introducing methods to effectively encode
 - **Spatial Encoding**: Encodes relationships between nodes using shortest path distances.
 - **Edge Encoding**: Incorporates edge-specific features like bond types in molecular graphs.
 
-With these enhancements, Graphormer bridges the gap between GNNs and Transformers, achieving exceptional results on tasks like molecular property prediction and large-scale challenges (e.g., OGB-LSC). 
+With these enhancements, Graphormer bridges the gap between GNNs and Transformers, achieving exceptional results on tasks like molecular property prediction and large-scale challenges (e.g., [OGB-LSC](https://arxiv.org/abs/2103.09430)). 
 
 This blog explores how Graphormer works, the challenges it addresses, and its potential to reshape graph representation learning.
 
